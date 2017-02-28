@@ -54,7 +54,7 @@
             },
             updateViewer : function(event) {
                 this.$.viewer.style.opacity = this.$.slider.immediateValue;
-                this.opacity = this.$.slider.immediateValue;
+                this.set('opacity',this.$.slider.immediateValue);
             }
         });
     </script>
