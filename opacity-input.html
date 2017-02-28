@@ -1,0 +1,61 @@
+
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-slider/paper-slider.html">
+
+<dom-module id="opacity-input">
+    <template>
+        <style>
+            :host {
+                display: block;
+            }
+            .transparent-viewer {
+                width : 80px;
+                height : 30px;
+                position : relative;
+                background : url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAIAAABLbSncAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAChJREFUeNpiPHPmDAMMGBsbw9lMDDgA6RKM%2F%2F%2F%2Fh3POnj1LCzsAAgwAQtYIcFfEyzkAAAAASUVORK5CYII%3D')
+            }
+            .color-viewer {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                opacity: 0.2;
+                border: 1px solid;
+            }
+            .slider {
+                width: 111px;
+                margin-left: -14px;
+                margin-top: -15px;
+            }
+        </style>
+        <div class="transparent-viewer">
+          <div id="viewer" style$="background:{{fillColor}}; border-color:{{fillColor}}" class="color-viewer"></div>
+        </div>
+        <paper-slider id="slider" class="slider" min="0.2" max="1" step="0.1" value="{{opacity}}" on-immediate-value-change="updateViewer"></paper-slider>
+    </template>
+    <script>
+        Polymer({
+            is: 'opacity-input',
+            properties : {
+                fillColor : {
+                    type : String,
+                    notify : true,
+                },
+                opacity : {
+                    type : Number,
+                    value : 0.9,
+                    noitfy : true
+                }
+            },
+
+            attached : function() {
+                this.$.viewer.style.opacity = this.opacity;
+            },
+            updateViewer : function(event) {
+                this.$.viewer.style.opacity = this.$.slider.immediateValue;
+                this.opacity = this.$.slider.immediateValue;
+            }
+        });
+    </script>
+</dom-module>

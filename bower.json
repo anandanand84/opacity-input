@@ -1,0 +1,20 @@
+{
+  "name": "opacity-input",
+  "main": "opacity-input.html",
+  "authors": [
+    "Anand Aravindan <anand.anand84@gmail.com>"
+  ],
+  "description": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "paper-slider": "PolymerElements/paper-slider#^1.0.13"
+  }
+}
