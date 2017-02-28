@@ -1,12 +1,9 @@
 {
   "name": "opacity-input",
-  "main": "opacity-input.html",
-  "authors": [
-    "Anand Aravindan <anand.anand84@gmail.com>"
-  ],
+  "main": "opacity-input.js",
+  "homepage": "https://github.com/anandanand84/opacity-input",
   "description": "",
   "license": "MIT",
-  "homepage": "",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -14,7 +11,16 @@
     "test",
     "tests"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anandanand84/opacity-input.git"
+  },
+  "author": "Anand Aravindan <anand.anand84@gmail.com> (traderslab.in)",
+  "bugs": {
+    "url": "https://github.com/anandanand84/opacity-input/issues"
+  },
   "dependencies": {
     "paper-slider": "PolymerElements/paper-slider#^1.0.13"
   }
 }
+
